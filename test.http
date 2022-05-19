@@ -1,0 +1,13 @@
+POST https://safe-woodland-83012.herokuapp.com/person HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Test",
+    "lname1":"Test",
+    "lname2":"Test",
+    "addr":"Test",
+    "nbhd":"Test",
+    "post":"Test",
+    "cel":"Test",
+    "mail":"Test"
+}

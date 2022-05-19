@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs-Slider</title>
+    <style>
+            .container{
+    width:100%;
+    height:80vh;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:30px 1fr;
+    }
+    .tabs{
+    
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+    .tabs *{
+    cursor:pointer;
+    padding: 20px;
+    
+    }
+
+    .tabs *:hover{
+    cursor:pointer;
+    color:purple;
+    }
+
+    .section-pool{
+        display:none;
+    }
+    h1{
+        text-align: center;
+    }
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="tabs">
+          <span class="tab" id="1">seccion 1</span>
+          <span class="tab" id="2">seccion 2</span>
+          <span class="tab" id="3">seccion 3</span>
+          <span class="tab" id="4">seccion 4</span>
+          <span class="tab" id="5">seccion 5</span>
+          <span class="tab" id="6">seccion 6</span>
+          <span class="tab" id="7">seccion 7</span>
+          <span class="tab" id="8">seccion 8</span>
+          <span class="tab" id="9">seccion 9</span>
+          <span class="tab" id="10">seccion 10</span>
+          <span class="tab" id="11">seccion 11</span>
+          <span class="tab" id="12">seccion 12</span>
+          <span class="tab" id="13">seccion 13</span>
+          
+        </div>
+        <div id="main-container">
+          
+        </div>
+      </div>
+
+<div class="section-pool">
+    <div id="section-1"><h1>contenido 1</h1></div>
+    <div id="section-2"><h1>contenido 2</h1></div>
+    <div id="section-3"><h1>contenido 3</h1></div>
+    <div id="section-4"><h1>contenido 4</h1></div>
+    <div id="section-5"><h1>contenido 5</h1></div>
+    <div id="section-6"><h1>contenido 6</h1></div>
+    <div id="section-7"><h1>contenido 7</h1></div>
+    <div id="section-8"><h1>contenido 8</h1></div>
+    <div id="section-9"><h1>contenido 9</h1></div>
+    <div id="section-10"><h1>contenido 10</h1></div>
+    <div id="section-11"><h1>contenido 11</h1></div>
+    <div id="section-12"><h1>contenido 12</h1></div>
+    <div id="section-13"><h1>contenido 13</h1></div>
+</div>
+
+    <!-- <script>
+const container = document.querySelector("#main-container");
+const defaultTab= document.querySelector("#section-13")
+container.innerHTML=defaultTab.innerHTML
+const mainContent = (id)=>{
+container.innerHTML=""; 
+const content = document.querySelector(`#section-${id}`);
+container.innerHTML=content.innerHTML;
+}
+const tabs = document.querySelectorAll(".tab")
+tabs.forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault()
+    try {
+        mainContent(item.id);
+    } catch (error) {
+        console.log(error);
+    }
+  });
+});
+    </script> -->
+
+<script>
+  const getData = async()=>{
+    const req = await fetch(`https://safe-woodland-83012.herokuapp.com/person`);
+    const res = await req.json();
+    console.log(res);
+}
+
+getData()
+</script>
+
+</body>
+</html>
